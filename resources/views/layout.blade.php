@@ -164,9 +164,9 @@
               </a>
             </li>
             <li class="nav-item nav-category"><span class="nav-link">Menu</span></li>
-            <li class="nav-item {{ 'catatanperjalanan' == request()->path() ? 'active' : '' }}">
-              <a class="nav-link" href="{{ url('catatanperjalanan') }}">
-                <span class="menu-title">Catatan Perjalanan</span>
+            <li class="nav-item {{ 'travelog' == request()->path() ? 'active' : '' }}">
+              <a class="nav-link" href="{{ url('travelog') }}">
+                <span class="menu-title">Travel Log</span>
                 <i class="bi bi-pen menu-icon"></i></i>
               </a>
             </li>

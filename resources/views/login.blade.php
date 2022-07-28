@@ -21,17 +21,29 @@
     * {
         box-sizing: border-box;
       }
+
+      .content-wrapper{
+          
+          width: 100vh;
+          height: 100vh;
+        }
     .container-scroller {
+      background-image: url('https://images.pexels.com/photos/7235894/pexels-photo-7235894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
       position: fixed;
       bottom: 0;
       width: 100%;
-      padding: 20px;
+      padding: 10px;
     }
     .coba {
-      background-color: rgba(255, 255, 255, 0.096);
+      /* background-color: rgba(255, 255, 255, 0.096);
       -webkit-backdrop-filter: blur(15px);
       backdrop-filter: blur(15px);
-      position: relative;
+      position: relative; */
+      background-color: white;
+      opacity: 0.75;
       width: 45rem;
       height: 30rem;
       color: #fff;
@@ -42,11 +54,11 @@
     </style>
   </head>
   <body>
-    {{-- <div class="fullscreen-bg">
+    <!-- {{-- <div class="fullscreen-bg">
       <video loop muted autoplay poster="poster.jpg" class="fullscreen-bg__video">
           <source src="{{ asset('img/bgvideo.mp4') }}" type="video/mp4">
       </video>
-  </div> --}}
+  </div> --}} -->
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
             <div class="coba">

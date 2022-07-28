@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NoteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,8 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('catatanperjalanan', function () {
-    return view('catatanperjalanan');
-});
+Route::get('/travelog', [NoteController::class, 'index']); 
+Route::post('/save-note', [NoteController::class, 'store'])->name('save-note'); 
 
 Route::get('riwayatperjalanan', function () {
     return view('riwayatperjalanan');

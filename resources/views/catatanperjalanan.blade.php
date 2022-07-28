@@ -1,42 +1,74 @@
 @extends('layout')
-@section('judul', 'Catatan Perjalanan')
+@section('judul', 'Travel Log')
 @section('isi')
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row purchace-popup">
         <div class="container text-center">
-            <div class="card">
+            <div class="card mb-4">
                 <div class="card-body">
                   <div class="button-allnya float-start">
-                  <button class="btn btn-warning btn-refresh mb-4"><i class="fa fa-refresh"></i> Refresh</button>
-                <a href="" class="btn btn-primary mb-4"><i
-                class="fas fa-plus"></i><span class="px-2">Tambah</span></a>
-                <a href="" class="btn btn-danger mb-4"></i><i class="fa-solid fa-file-pdf"></i><span class="px-2">Export PDF</span></a>
+                  <button class="btn btn-warning btn-refresh fs-6"><i class="fa fa-refresh"></i> Refresh</button>
+                <a href="" class="btn btn-primary"><i
+                class="fas fa-plus"></i><span class="px-2">Add</span></a>
+                <!-- <a href="" class="btn btn-danger mb-4"></i><i class="fa-solid fa-file-pdf"></i><span class="px-2">Export PDF</span></a> -->
                   </div>
+                </div>
+            </div>
+            <div class="card">
+                  <div class="card-body">
                     <table class="table table-hover table-bordered">
                         <thead class="table-success">
                           <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Tanggal</th>
-                            <th scope="col">Waktu</th>
-                            <th scope="col">Lokasi</th>
-                            <th scope="col">Suhu Tubuh</th>
+                            <th scope="col">No.</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Body Temperature</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td scope="row">Mark</td>
-                            <td scope="row">Otto</td>
-                            <td scope="row">Otto</td>
+                        @foreach ($dataNote as $item)
+                        <tr>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{ $item->created_at->isoFormat('MM/DD/YYYY'); }}</td>
+                            <td>{{ $item->created_at->isoFormat('hh:mm:ss'); }}</td>
+                            <td>{{ $item->location }}</td>
+                            <td>{{ $item->temp }}</td>
                           </tr>
                         </tbody>
                       </table>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('save-note') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location">
+                            @error('location')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Body Temperature</label>
+                            <input type="text" class="form-control" name="temp">
+                            @error('temp')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="btn btn-dark">Add</button>
+                    </form>
+                </div>
+            </div>
         </div>
       </div>
-@endsection
+      @endsection
 @push('scripts')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -69,35 +101,6 @@
         })
 
     })
-</script>
-
-<script>
-    $(function () {
-        $('#barang-table').DataTable({
-            columnDefs: [{
-                paging: true,
-                scrollX: true,
-                lengthChange: true,
-                searching: true,
-                ordering: true,
-                targets: [1, 2, 3, 4],
-            }, ],
-        });
-
-        $('button').click(function () {
-            var data = table.$('input, select', 'button', 'form').serialize();
-            return false;
-        });
-        table.columns().iterator('column', function (ctx, idx) {
-            $(table.column(idx).header()).prepend('<span class="sort-icon"/>');
-        });
-    });
-</script>
-
-<script>
-    @if(Session::has('success'))
-    toastr.success("{{ Session::get('success') }}")
-    @endif
 </script>
 
 @endpush
