@@ -202,7 +202,7 @@
           <i class="bi bi-journal-bookmark-fill" style="font-size: 1.7rem"></i>
           <h5>Make an itinerary</h5>
           <p class="fw-light">Start programming your itinerary. Understand which places you're going to visit.</p>
-          <button type="button" title="Click In Here For Create Travel Log" class="btn btn-dark"><a href="" style="text-decoration: none; color: white">Create Travel Log</a></button>
+          <button type="button" title="Click In Here For Create Travel Log" class="btn btn-dark"><a href="{{ url('travellog') }}" style="text-decoration: none; color: white">Create Travel Log</a></button>
         </div>
         <div class="col rounded-4">
           <i class="bi bi-thermometer-sun" style="font-size: 1.7rem"></i>
