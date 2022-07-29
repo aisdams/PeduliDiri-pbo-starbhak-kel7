@@ -96,12 +96,6 @@
                   </button>
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
-                    <div class="form-check">
-                      <label class="form-check-label text-muted">
-                        <input type="checkbox" class="form-check-input"> Keep me signed in </label>
-                    </div>
-                    <a href="#" class="auth-link text-white">Forgot password ?</a>
-                  </div>
                   <div class="text-center mt-2 font-weight-light text-dark"> Don't Have Account ? <a href="{{ url('registration')}}" class="text-info text-dark">Sign Up</a>
                   </div>
                 </form>
