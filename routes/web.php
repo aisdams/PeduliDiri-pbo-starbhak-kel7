@@ -28,7 +28,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/travelog', [NoteController::class, 'index']); 
 Route::post('/save', [NoteController::class, 'store'])->name('save'); 
-
+Route::get('kliping', [NoteController::class, 'json']);
 Route::get('riwayatperjalanan', function () {
     return view('riwayatperjalanan');
 });

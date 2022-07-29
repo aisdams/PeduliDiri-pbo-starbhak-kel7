@@ -47,7 +47,7 @@
             </div>
             <div class="card mb-5">
                   <div class="card-body">
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered" id="table_id">
                         <thead class="table-success">
                           <tr>
                             <th scope="col">No.</th>
@@ -57,7 +57,7 @@
                             <th scope="col">Body Temperature</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="alldata">
                         @foreach ($dataNote as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
@@ -77,6 +77,14 @@
 @push('scripts')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap.min.js"></script>
+ <!-- jQuery -->
+ <script src="//code.jquery.com/jquery.js"></script>
+ <!-- DataTables -->
+<script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+ <!-- Bootstrap JavaScript -->
+ <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.7.0/validator.min.js"
     integrity="sha512-rJU+PnS2bHzDCvRGFhXouCSxf4YYaUyUfjXMHsHFfMKhWDIEBr8go2LZ2EYXOqASey1tWc2qToeOCYh9et2aGQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -87,25 +95,22 @@
     integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#table_id').DataTable({
+        processing: true,
+        searching: true,
+    });
+});
+</script>
+
 <script type="text/javascript">
     $.ajaxSetup({
         headers: {
             'csrftoken': '{{ csrf_token() }}'
         }
     });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        // btn refresh
-        $('.btn-refresh').click(function (e) {
-            e.preventDefault();
-            $('.preloader').fadeIn();
-            location.reload();
-        })
-
-    })
 </script>
 
 @endpush

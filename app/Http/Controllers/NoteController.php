@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 
 class NoteController extends Controller
@@ -24,6 +25,17 @@ class NoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request){
+
+        if($request->ajax()){
+    
+            $data= Note::where('created_at','like','%'.$request->search.'%')
+            ->orwhere('location','like','%'.$request->search.'%')
+            ->orwhere('temp','like','%'.$request->search.'%')->get();
+        }
+    
+      }
+
     public function create()
     {
         //
