@@ -29,16 +29,17 @@
       padding: 20px;
     }
     .coba {
-      background-color: rgba(255, 255, 255, 0.096);
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
       position: relative;
-      width: 45rem;
+      width: 30rem;
       height: 32rem;
       color: #fff;
       margin: 0 auto;
       top: 75px;
-      border-radius: 10px;
+    }
+
+    .mx-auto{
+      box-shadow: 1px 4px 10px 0px rgba(46,46,46,0.32);
+      width: 25rem;
     }
     </style>
   </head>
@@ -50,10 +51,10 @@
   </div> --}}
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="coba">
+        <div class="coba">
           <div class="row flex-grow bgnya">
-            <div class="col-lg-6 mx-auto">
-              <div class="auth-form-light text-left p-4">
+            <div class="mx-auto py-3 px-4">
+              <div class="auth-form-light text-left">
                 <div class="brand-logo text-center">
                   <img src="{{ asset('img/logo.png') }}" style="width: 150px;">
                 </div>

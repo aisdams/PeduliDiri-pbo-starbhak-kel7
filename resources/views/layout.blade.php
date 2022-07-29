@@ -47,11 +47,11 @@
         <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
           <h5 class="mb-0 font-weight-medium d-none d-lg-flex">@yield('judul')</h5>
           <ul class="navbar-nav navbar-nav-right ml-auto">
-            <form class="search-form d-none d-md-block" action="#">
+            <!-- <form class="search-form d-none d-md-block" action="#">
               <i class="icon-magnifier"></i>
               <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-            </form>
-            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-basket-loaded"></i></a></li>
+            </form> -->
+            <!-- <li class="nav-item"><a href="#" class="nav-link"><i class="icon-basket-loaded"></i></a></li>
             <li class="nav-item"><a href="#" class="nav-link"><i class="icon-chart"></i></a></li>
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -92,7 +92,7 @@
                   </div>
                 </a>
               </div>
-            </li>
+            </li> -->
             <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">
               <a class="nav-link d-flex align-items-center dropdown-toggle" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="d-inline-flex mr-3">
@@ -121,10 +121,8 @@
                   <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                 </div>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
-                <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a>
-                <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
-                <a href="{{ url('logout') }}" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Keluar</a>
+                <a href="{{ url('logout') }}" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Logout</a>
               </div>
             </li>
           </ul>
@@ -139,19 +137,19 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
+              <!-- <a href="#" class="nav-link">
                 <div class="profile-image">
                   <img class="img-xs rounded-circle" src="{{ asset('template/images/faces/face8.jpg') }}" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
-                </div>
-                <div class="text-wrapper">
+                </div> -->
+                <!-- <div class="text-wrapper">
                   <p class="profile-name">{{ Auth::user()->name }}</p>
                   <p class="designation">Administrator</p>
                 </div>
                 <div class="icon-container">
                   <i class="icon-bubbles"></i>
                   <div class="dot-indicator bg-danger"></div>
-                </div>
+                </div> -->
               </a>
             </li>
             <li class="nav-item nav-category">
@@ -173,7 +171,7 @@
             </li>
             <li class="nav-item {{ 'riwayatperjalanan' == request()->path() ? 'active' : '' }}">
               <a class="nav-link" href="{{ url('riwayatperjalanan') }}">
-                <span class="menu-title">Riwayat Perjalanan</span>
+                <span class="menu-title">Travel History</span>
                 <i class="icon-grid menu-icon"></i></i>
               </a>
             </li>
