@@ -169,12 +169,6 @@
               </a>
             </li>
             </li>
-            <li class="nav-item {{ 'riwayatperjalanan' == request()->path() ? 'active' : '' }}">
-              <a class="nav-link" href="{{ url('riwayatperjalanan') }}">
-                <span class="menu-title">Travel History</span>
-                <i class="icon-grid menu-icon"></i></i>
-              </a>
-            </li>
           </ul>
         </nav>
         <!-- partial -->
