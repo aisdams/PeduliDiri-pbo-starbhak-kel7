@@ -4,18 +4,48 @@
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="row purchace-popup">
-        <div class="container text-center">
+        <div class="container">
             <div class="card mb-4">
                 <div class="card-body">
+                
+                <form action="{{ route('save-note') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row g-2 mb-2">
+                            <div class="col-md mt-3">
+                              <div class="form-floating">
+                                <input type="text" class="form-control" name="location" placeholder=" Add Your Location">     
+                            @error('location')
+                            <div class="text-warning">{{ $message }}</div>
+                            @enderror
+  
+                                <label for="floatingInputGrid">Location</label>
+                              </div>
+  
+                            </div>
+                            <div class="col-md mt-3">
+                              <div class="form-floating">
+                                <div class="form-floating mb-4">
+                                    <input type="text" class="form-control" name="temp" placeholder="Body Temp">
+                                    
+                                    @error('temp')
+                                        <div class="text-warning">{{ $message }}</div>
+                                    @enderror
+          
+                                    <label for="floatingInputGrid">Body Temp</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          
                   <div class="button-allnya float-start">
                   <button class="btn btn-warning btn-refresh fs-6"><i class="fa fa-refresh"></i> Refresh</button>
-                <a href="" class="btn btn-primary"><i
-                class="fas fa-plus"></i><span class="px-2">Add</span></a>
-                <!-- <a href="" class="btn btn-danger mb-4"></i><i class="fa-solid fa-file-pdf"></i><span class="px-2">Export PDF</span></a> -->
+                <button type="submit" class="btn btn-primary"><i
+                class="fas fa-plus"></i>Add</button>
+                    </form>
                   </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card mb-5">
                   <div class="card-body">
                     <table class="table table-hover table-bordered">
                         <thead class="table-success">
@@ -34,36 +64,11 @@
                             <td>{{ $item->created_at->isoFormat('MM/DD/YYYY'); }}</td>
                             <td>{{ $item->created_at->isoFormat('hh:mm:ss'); }}</td>
                             <td>{{ $item->location }}</td>
-                            <td>{{ $item->temp }}</td>
+                            <td>{{ $item->temp }}°C</td>
                           </tr>
+                          @endforeach
                         </tbody>
                       </table>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-body">
-                    <form action="{{ route('save-note') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Location</label>
-                            <input type="text" class="form-control" name="location">
-                            @error('location')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Body Temperature</label>
-                            <input type="text" class="form-control" name="temp">
-                            @error('temp')
-                            <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <button type="submit" class="btn btn-dark">Add</button>
-                    </form>
                 </div>
             </div>
         </div>

@@ -27,29 +27,30 @@
           width: 100vh;
           height: 100vh;
         }
-    .container-scroller {
-      background-image: url('https://images.pexels.com/photos/7235894/pexels-photo-7235894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+        .container-scroller {
+      /* background-image: url('https://img.freepik.com/free-vector/happy-couple-tourists-with-backpacks-camping-stuff-hitchhiking-road-thumbing-yellow-car_74855-14043.jpg?w=740&t=st=1659067773~exp=1659068373~hmac=4690af4c837dcc0c36ae94e6e55038450f800f43720fa15fe1e88f3db4b0e099');  */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       position: fixed;
       bottom: 0;
       width: 100%;
-      padding: 10px;
+      padding: 20px;
     }
+
     .coba {
-      /* background-color: rgba(255, 255, 255, 0.096);
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
-      position: relative; */
-      background-color: white;
-      opacity: 0.75;
-      width: 45rem;
-      height: 30rem;
+      position: relative;
+      width: 30rem;
+      height: 32rem;
       color: #fff;
       margin: 0 auto;
       top: 75px;
-      border-radius: 10px;
+    }
+
+    .mx-auto{
+      background-color: white;
+      box-shadow: 1px 4px 10px 0px rgba(46,46,46,0.32);
+      width: 25rem;
     }
     </style>
   </head>
@@ -63,7 +64,7 @@
       <div class="container-fluid page-body-wrapper full-page-wrapper">
             <div class="coba">
           <div class="row flex-grow bgnya">
-            <div class="col-lg-6 mx-auto">
+            <div class="mx-auto py-3 px-4">
               <div class="auth-form-light text-left p-4">
                 <div class="brand-logo text-center">
                   <img src="{{ asset('img/logo.png') }}" style="width: 150px;">
@@ -101,7 +102,7 @@
                     </div>
                     <a href="#" class="auth-link text-white">Forgot password ?</a>
                   </div>
-                  <div class="text-center mt-2 font-weight-light"> Don't Have Account ? <a href="{{ url('registration')}}" class="text-info">Sign Up</a>
+                  <div class="text-center mt-2 font-weight-light text-dark"> Don't Have Account ? <a href="{{ url('registration')}}" class="text-info">Sign Up</a>
                   </div>
                 </form>
               </div>
