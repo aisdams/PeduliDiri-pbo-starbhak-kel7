@@ -23,7 +23,7 @@
       }
 
     .container-scroller {
-      /* background-image: url('https://img.freepik.com/free-vector/happy-couple-tourists-with-backpacks-camping-stuff-hitchhiking-road-thumbing-yellow-car_74855-14043.jpg?w=740&t=st=1659067773~exp=1659068373~hmac=4690af4c837dcc0c36ae94e6e55038450f800f43720fa15fe1e88f3db4b0e099');  */
+      background-image: url('https://images.pexels.com/photos/5232436/pexels-photo-5232436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
       background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -58,7 +58,7 @@
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="coba">
           <div class="row flex-grow bgnya">
-            <div class="mx-auto py-3 px-4">
+            <div class="mx-auto py-4 px-4">
               <div class="auth-form-light text-left">
                 <div class="brand-logo text-center">
                   <img src="{{ asset('img/logo.png') }}" style="width: 150px;">
@@ -95,7 +95,7 @@
                       Register
                   </button>
                   </div>
-                  <div class="text-center mt-4 font-weight-light text-dark fs-6"> Have Account ? <a href="{{ url('login')}}" class="text-info">Sign In</a>
+                  <div class="text-center mt-4 font-weight-light text-dark fs-6"> Have Account ? <a href="{{ url('login')}}" class="text-info text-dark">Sign In</a>
                   </div>
                 </form>
               </div>

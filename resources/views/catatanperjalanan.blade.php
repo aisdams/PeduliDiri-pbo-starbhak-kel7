@@ -8,7 +8,7 @@
             <div class="card mb-4">
                 <div class="card-body">
                 
-                <form action="{{ route('save-note') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('save') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row g-2 mb-2">
                             <div class="col-md mt-3">

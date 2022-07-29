@@ -28,7 +28,7 @@
           height: 100vh;
         }
         .container-scroller {
-      /* background-image: url('https://img.freepik.com/free-vector/happy-couple-tourists-with-backpacks-camping-stuff-hitchhiking-road-thumbing-yellow-car_74855-14043.jpg?w=740&t=st=1659067773~exp=1659068373~hmac=4690af4c837dcc0c36ae94e6e55038450f800f43720fa15fe1e88f3db4b0e099');  */
+      background-image: url('https://images.pexels.com/photos/2724078/pexels-photo-2724078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); 
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -102,7 +102,7 @@
                     </div>
                     <a href="#" class="auth-link text-white">Forgot password ?</a>
                   </div>
-                  <div class="text-center mt-2 font-weight-light text-dark"> Don't Have Account ? <a href="{{ url('registration')}}" class="text-info">Sign Up</a>
+                  <div class="text-center mt-2 font-weight-light text-dark"> Don't Have Account ? <a href="{{ url('registration')}}" class="text-info text-dark">Sign Up</a>
                   </div>
                 </form>
               </div>

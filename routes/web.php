@@ -27,7 +27,7 @@ Route::get('dashboard', [AuthController::class, 'dashboard']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/travelog', [NoteController::class, 'index']); 
-Route::post('/save-note', [NoteController::class, 'store'])->name('save-note'); 
+Route::post('/save', [NoteController::class, 'store'])->name('save'); 
 
 Route::get('riwayatperjalanan', function () {
     return view('riwayatperjalanan');
