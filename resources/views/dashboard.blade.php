@@ -24,7 +24,7 @@
   transform: translateX(100%); /* Animation start out of the screen */
 
   /* Add the animation */
-  animation: move 30s linear infinite /* infinite make reapeat the animation indefinitely */;
+  animation: move 15s linear infinite /* infinite make reapeat the animation indefinitely */;
 }
 
 .bar .bar_content h4 {
