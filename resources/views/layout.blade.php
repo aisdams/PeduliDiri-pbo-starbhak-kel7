@@ -96,7 +96,7 @@
                 </a>
               </div>
             </li> -->
-            <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">
+            {{-- <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">
               <a class="nav-link d-flex align-items-center dropdown-toggle" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="d-inline-flex mr-3">
                   <i class="flag-icon flag-icon-us"></i>
@@ -113,8 +113,8 @@
                 <a class="dropdown-item">
                   <i class="flag-icon flag-icon-ru"></i> Russian </a>
               </div>
-            </li>
-            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+            </li> --}}
+            {{-- <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <img class="img-xs rounded-circle ml-2" src="{{ asset('template/images/faces/face8.jpg') }}" alt="Profile image"> <span class="font-weight-normal">{{ Auth::user()->name }}</span></a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -127,7 +127,7 @@
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
                 <a href="{{ url('logout') }}" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Logout</a>
               </div>
-            </li>
+            </li> --}}
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="icon-menu"></span>
