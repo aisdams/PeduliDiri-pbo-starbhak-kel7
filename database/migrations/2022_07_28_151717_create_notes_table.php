@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('location');
-            $table->string('temp');
+            $table->string('bodytemp');
+            $table->string('image');
+            $table->date('tanggal');
+            $table->time('waktu');
             $table->timestamps();
         });
     }
