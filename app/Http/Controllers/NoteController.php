@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Note;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Validator;
 
 
 class NoteController extends Controller
@@ -16,8 +18,10 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $dataNote = Note::all();
-        return view('catatanperjalanan', compact('dataNote'));
+
+        $note = Note::latest()->paginate(5);
+
+        return new UserResource(true, 'List Catatan Perjalanan', $note);
     }
 
     /**
@@ -36,66 +40,38 @@ class NoteController extends Controller
     
       }
 
-    public function create()
-    {
-        //
-    }
+      public function store(Request $request)
+      {
+          $validator = Validator::make($request->all(), [
+              'user_id'    => 'required',
+              'location'   => 'required',
+              'bodytemp'   => 'required',
+              'image'      => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+              'date'       => 'required',
+              'time'       => 'required',
+          ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $dataNote = Note::create($request->all());
+          if ($validator->fails()) {
+              return response()->json($validator->errors(), 422);
+          }
+  
+          $image = $request->file('image');
+          $image->storeAs('public/travels', $image->hashName());
+  
+          $note = Note::create([
+              'user_id'    => $request->user_id,
+              'location'   => $request->location,
+              'bodytemp'   => $request->bodytemp,
+              'image'      => $image->hashName(),
+              'date'       => $request->date,
+              'time'       => $request->time,
+          ]);
+  
+          return new UserResource(true, 'Catatan Perjalanan Berhasil Ditambahkan!', $note);
+      }
 
-        return Redirect('/travelog')->with('success', 'Data Berhasil Ditambahkan');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+      public function show(Note $note)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return new UserResource(true, 'Data Catatan Perjalanan Ditemukan!', $note);
     }
 }

@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('location');
             $table->string('bodytemp');
             $table->string('image');
-            $table->date('tanggal');
-            $table->time('waktu');
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }
