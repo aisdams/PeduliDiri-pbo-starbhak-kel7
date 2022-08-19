@@ -22,7 +22,7 @@ class User extends Authenticatable
 
     public function note()
     {
-        return $this->hasOne(Note::class);
+        return $this->hasMany(Note::class);
     }
     /**
      * The attributes that should be hidden for serialization.
