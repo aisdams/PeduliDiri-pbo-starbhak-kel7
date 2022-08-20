@@ -16,7 +16,7 @@ class UserController extends Controller
         $login = User::latest()->paginate(5);
         $note = Note::latest()->with('user')->paginate(5);
 
-        return new UserResource(true, 'List Data Posts', $login, $note);
+        return new UserResource(true, 'List Data User', $login, $note);
     }
 
     public function store(Request $request)
@@ -73,12 +73,12 @@ class UserController extends Controller
             ]);
 
 
-        return new UserResource(true, 'Data Post Berhasil Diubah!', $login);
+        return new UserResource(true, 'Data User Berhasil Diubah!', $login);
     }
     public function destroy(User $login)
     {
         $login->delete();
 
-        return new UserResource(true, 'Data Post Berhasil Dihapus!', null);
+        return new UserResource(true, 'Data User Berhasil Dihapus!', null);
     }
 }

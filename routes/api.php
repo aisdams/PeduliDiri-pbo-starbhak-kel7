@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\CatatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 //posts
 Route::apiResource('/logins', UserController::class);
-
+Route::apiResource('/note', CatatanController::class);
 // Route::apiResource('/travels', NoteController::class);
 
